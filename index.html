@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Checklist praktis untuk menyiapkan barang-barang penting sebelum pindah ke kos."
+    />
+    <meta name="theme-color" content="#f8f7f3" />
+    <title>Kost Check — Siap pindah, tanpa yang tertinggal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="login-screen" class="login-screen">
+      <section class="login-card" aria-labelledby="login-title">
+        <a class="brand brand-login" href="#" aria-label="Kost Check beranda">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M5 14.2 16 5l11 9.2v12.3a.5.5 0 0 1-.5.5h-21a.5.5 0 0 1-.5-.5V14.2Z" fill="currentColor" />
+              <path d="m11.5 19 3 3 6-7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span>Kost<span class="brand-light">Check</span></span>
+        </a>
+        <div class="login-art" aria-hidden="true">
+          <span class="art-sun"></span>
+          <span class="art-window"><i></i><i></i><i></i><i></i></span>
+          <span class="art-plant">✳</span>
+          <span class="art-box art-box-back"></span>
+          <span class="art-box art-box-front"><b>RUMAH BARU</b><i>fragile · hati-hati</i></span>
+          <span class="art-floor"></span>
+        </div>
+        <div class="login-copy">
+          <p class="eyebrow">MULAI DENGAN TENANG</p>
+          <h1 id="login-title">Babak baru,<br />nggak ada yang tertinggal.</h1>
+          <p class="login-description">Simpan daftar barang kos pertamamu dan centang satu per satu. Biar hari pindahan lebih ringan.</p>
+          <form id="login-form" class="login-form">
+            <label for="email">Email kamu</label>
+            <div class="input-wrap">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="2" stroke="currentColor" stroke-width="1.5" /><path d="m3.5 5.5 6.5 5 6.5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="nama@email.com" required />
+            </div>
+            <label for="password">Kata sandi</label>
+            <div class="input-wrap">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3.5" y="8.5" width="13" height="9" rx="2" stroke="currentColor" stroke-width="1.5" /><path d="M6.5 8.5V6a3.5 3.5 0 1 1 7 0v2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+              <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Minimal 6 karakter" minlength="6" required />
+              <button id="toggle-password" class="password-toggle" type="button" aria-label="Tampilkan kata sandi">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2.5 10s2.7-5 7.5-5 7.5 5 7.5 5-2.7 5-7.5 5-7.5-5-7.5-5Z" stroke="currentColor" stroke-width="1.5" /><circle cx="10" cy="10" r="2" stroke="currentColor" stroke-width="1.5" /></svg>
+              </button>
+            </div>
+            <p id="login-error" class="form-error" role="alert"></p>
+            <button class="button button-primary login-submit" type="submit">Masuk dan mulai <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="demo-note"><span aria-hidden="true">✦</span> Mode demo — akun dan progres tersimpan di perangkat ini.</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="app-screen" class="app-screen" hidden>
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="Kost Check beranda">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M5 14.2 16 5l11 9.2v12.3a.5.5 0 0 1-.5.5h-21a.5.5 0 0 1-.5-.5V14.2Z" fill="currentColor" /><path d="m11.5 19 3 3 6-7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </span>
+          <span>Kost<span class="brand-light">Check</span></span>
+        </a>
+        <div class="sidebar-label">RUANG PERSIAPAN</div>
+        <button class="nav-link active" type="button">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /><path d="m5 5.5.01 0M5 10l.01 0M5 14.5l.01 0" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
+          Checklist barang
+          <span id="sidebar-count" class="nav-count">0/0</span>
+        </button>
+        <div class="sidebar-tip">
+          <span class="tip-icon">✿</span>
+          <p>Pelan-pelan aja,<br />semua ada waktunya.</p>
+          <span class="tip-caption">SATU CENTANG SEKALIGUS</span>
+        </div>
+        <div class="sidebar-footer">
+          <span class="avatar" id="user-avatar">K</span>
+          <span class="user-details"><b id="sidebar-user">Pengguna</b><small>Pejuang kos baru</small></span>
+          <button id="logout-button" class="logout-button" type="button" aria-label="Keluar" title="Keluar">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 3.5H4.5a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1H8M12.5 13l3-3-3-3M15.5 10H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </button>
+        </div>
+      </aside>
+
+      <main class="dashboard">
+        <header class="topbar">
+          <p id="current-date" class="date-label"></p>
+          <div class="topbar-user"><span>Hai, <b id="greeting-name">teman</b>!</span><span class="avatar avatar-small" id="top-avatar">K</span></div>
+        </header>
+        <div class="dashboard-content">
+          <section class="welcome-row">
+            <div>
+              <p class="eyebrow">CHECKLIST PINDAHAN PERTAMAMU</p>
+              <h1>Siap-siap jadi anak kos <span class="heading-sparkle">✳</span></h1>
+              <p class="welcome-text">Barangnya banyak, tapi nggak perlu diingat sendirian. Centang yang sudah siap, ya.</p>
+            </div>
+            <div class="welcome-doodle" aria-hidden="true"><span>✿</span><i></i></div>
+          </section>
+
+          <section class="progress-card" aria-label="Progres checklist">
+            <div class="progress-top">
+              <div><p class="card-eyebrow">PROGRES PERSIAPAN</p><p id="progress-message" class="progress-message">Setiap langkah kecil berarti ✨</p></div>
+              <p class="progress-number"><strong id="progress-percent">0</strong><span>%</span></p>
+            </div>
+            <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+            <div class="progress-bottom"><span id="progress-count">0 dari 0 barang siap</span><span class="progress-encouragement">Kamu pasti bisa!</span></div>
+            <p id="storage-error" class="storage-error" role="status" hidden></p>
+          </section>
+
+          <section class="checklist-section">
+            <div class="section-heading">
+              <div><h2>Daftar barang</h2><p id="visible-count">Semua yang kamu butuhkan, di satu tempat.</p></div>
+              <label class="search-box">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.8" cy="8.8" r="5.8" stroke="currentColor" stroke-width="1.5" /><path d="m13 13 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+                <input id="search-input" type="search" placeholder="Cari barang..." aria-label="Cari barang" />
+              </label>
+            </div>
+            <div id="category-filters" class="category-filters" aria-label="Filter kategori"></div>
+            <div id="checklist" class="checklist"></div>
+            <div id="empty-state" class="empty-state" hidden>
+              <span>🔎</span><b>Barangnya belum ketemu</b><p>Coba kata kunci atau kategori lain, yuk.</p>
+            </div>
+          </section>
+          <footer class="dashboard-footer">Dibuat dengan <span>♥</span> untuk hari pindahan yang lebih tenang.</footer>
+        </div>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
